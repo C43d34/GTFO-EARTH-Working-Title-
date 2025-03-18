@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ocgppf2yf1dk"]
+
+[ext_resource type="Script" uid="uid://peuxnie6b2j4" path="res://Entities/PlayerCharacter/player_character.gd" id="1_kqwq0"]
+[ext_resource type="Texture2D" uid="uid://kf8c24oiph37" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_mifve"]
+[ext_resource type="Texture2D" uid="uid://dy81qcr78avl6" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="3_kyd7j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqwq0"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("character_collision")]
+texture_filter = 1
+script = ExtResource("1_kqwq0")
+character_collision = NodePath("CollisionShape2D")
+
+[node name="Aiming" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-14, -28)
+texture = ExtResource("3_kyd7j")
+region_enabled = true
+region_rect = Rect2(17.169, 0.162708, 16.4167, 15.8583)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.53674e-07)
+rotation = 1.5708
+scale = Vector2(0.71, 0.71)
+shape = SubResource("CapsuleShape2D_kqwq0")
+
+[node name="CharacterSprite" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+position = Vector2(-5.63381, -1.40845)
+rotation = -1.5708
+scale = Vector2(1.40845, 1.40845)
+texture = ExtResource("2_mifve")
+region_enabled = true
+region_rect = Rect2(65.9858, 6.05956, 29.922, 22.9351)
