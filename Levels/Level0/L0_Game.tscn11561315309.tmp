@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqsbvnoy8nd8k"]
+[gd_scene load_steps=6 format=3 uid="uid://bqsbvnoy8nd8k"]
 
-[ext_resource type="Script" uid="uid://cafw16jkme3e5" path="res://Levels/Level0/l_0_game.gd" id="1_w522s"]
+[ext_resource type="PackedScene" uid="uid://ocgppf2yf1dk" path="res://Entities/PlayerCharacter/Prototype1/PlayerCharacter01.tscn" id="1_xnuj4"]
+[ext_resource type="PackedScene" uid="uid://cl7hpjwrx2xbx" path="res://User Interface/UI_Ingame.tscn" id="2_duoog"]
 [ext_resource type="PackedScene" uid="uid://6exbfiyimvgt" path="res://Miscellaneous (Unsorted Stuff)/GREYBOX.tscn" id="2_nw63s"]
 [ext_resource type="PackedScene" uid="uid://ceikoipn7u3ao" path="res://Miscellaneous (Unsorted Stuff)/Collider_WallSlider.tscn" id="3_07vxf"]
 
@@ -8,7 +9,14 @@
 distance = -50.0
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_w522s")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_xnuj4")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-5, 3)
+zoom = Vector2(2.125, 2.125)
+process_callback = 0
+position_smoothing_enabled = true
 
 [node name="Stage_Structure" type="Node" parent="."]
 
@@ -99,7 +107,7 @@ scale = Vector2(7.86232, 2.43642)
 [node name="GreyboxSquare18" parent="Stage_Structure" instance=ExtResource("2_nw63s")]
 position = Vector2(263, -167)
 rotation = 3.03965
-scale = Vector2(1.87674, 0.193729)
+scale = Vector2(1.12384, 0.193729)
 
 [node name="GreyboxSquare19" parent="Stage_Structure" instance=ExtResource("2_nw63s")]
 position = Vector2(108, -91)
@@ -111,6 +119,11 @@ position = Vector2(496, 69)
 scale = Vector2(1, 4.39999)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="UiIngame" parent="CanvasLayer" node_paths=PackedStringArray("player_character") instance=ExtResource("2_duoog")]
+player_character = NodePath("../../CharacterBody2D")
+metadata/_edit_use_anchors_ = true
 
 [node name="GreyboxSquare" parent="." instance=ExtResource("2_nw63s")]
 position = Vector2(423, -219)
@@ -118,13 +131,6 @@ rotation = 1.03712
 scale = Vector2(2.12341, 0.322755)
 
 [node name="ColliderWallSlider" parent="." instance=ExtResource("3_07vxf")]
-position = Vector2(406, -223)
+position = Vector2(412, -213)
 rotation = 5.75959
 scale = Vector2(1, 6.1153)
-
-[node name="ColliderWallSlider2" parent="." instance=ExtResource("3_07vxf")]
-position = Vector2(452, -141)
-rotation = 6.24721
-scale = Vector2(1, 2.4753)
-
-[connection signal="ready" from="." to="." method="_on_ready"]

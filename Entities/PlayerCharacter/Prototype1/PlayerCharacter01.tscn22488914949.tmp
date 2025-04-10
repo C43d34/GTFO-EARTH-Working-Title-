@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://ocgppf2yf1dk"]
+[gd_scene load_steps=7 format=3 uid="uid://ocgppf2yf1dk"]
 
-[ext_resource type="Script" uid="uid://peuxnie6b2j4" path="res://Entities/PlayerCharacter/player_character.gd" id="1_kqwq0"]
+[ext_resource type="Script" uid="uid://cfq35sc2n8e84" path="res://Entities/PlayerCharacter/Prototype1/InputProcessing.gd" id="1_bluli"]
 [ext_resource type="Texture2D" uid="uid://kf8c24oiph37" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_mifve"]
 [ext_resource type="Texture2D" uid="uid://dy81qcr78avl6" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="3_kyd7j"]
+[ext_resource type="PackedScene" uid="uid://bkv43srj6tnpy" path="res://Entities/PlayerCharacter/Prototype1/movement_special.tscn" id="4_bluli"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqwq0"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7ila"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("character_collision")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bluli"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("character_collision", "area_circle")]
 texture_filter = 1
-script = ExtResource("1_kqwq0")
+script = ExtResource("1_bluli")
 character_collision = NodePath("CollisionShape2D")
+area_circle = NodePath("AreaCircle")
 
 [node name="Aiming" type="Sprite2D" parent="."]
 visible = false
@@ -22,7 +26,7 @@ region_rect = Rect2(17.169, 0.162708, 16.4167, 15.8583)
 position = Vector2(0, 9.53674e-07)
 rotation = 1.5708
 scale = Vector2(0.71, 0.71)
-shape = SubResource("CapsuleShape2D_kqwq0")
+shape = SubResource("CircleShape2D_u7ila")
 
 [node name="CharacterSprite" type="Sprite2D" parent="CollisionShape2D"]
 texture_filter = 1
@@ -32,3 +36,11 @@ scale = Vector2(1.40845, 1.40845)
 texture = ExtResource("2_mifve")
 region_enabled = true
 region_rect = Rect2(65.9858, 6.05956, 29.922, 22.9351)
+
+[node name="SpecialMovementEnergyManager" parent="." instance=ExtResource("4_bluli")]
+
+[node name="AreaCircle" type="Area2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="Collision_Circle" type="CollisionShape2D" parent="AreaCircle"]
+shape = SubResource("CircleShape2D_bluli")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://ocgppf2yf1dk"]
+
+[ext_resource type="Script" uid="uid://peuxnie6b2j4" path="res://Entities/PlayerCharacter/Prototype1/player_character01.gd" id="1_bluli"]
+[ext_resource type="Texture2D" uid="uid://kf8c24oiph37" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_mifve"]
+[ext_resource type="Texture2D" uid="uid://dy81qcr78avl6" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="3_kyd7j"]
+[ext_resource type="PackedScene" uid="uid://bkv43srj6tnpy" path="res://Entities/PlayerCharacter/Prototype1/movement_special.tscn" id="4_bluli"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7ila"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bluli"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_bluli")
+_walk_speed = 2000.0
+_max_walk_speed = 250.0
+_air_speed = 2000.0
+_max_air_speed = 250.0
+_jump_strength = 400.0
+_crouch_strength = 9.5
+_gravity_strength = 0.6
+_friction_strength = 10.0
+_air_friction_strength = 2.0
+
+[node name="Aiming" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-14, -28)
+texture = ExtResource("3_kyd7j")
+region_enabled = true
+region_rect = Rect2(17.169, 0.162708, 16.4167, 15.8583)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.53674e-07)
+rotation = 1.5708
+scale = Vector2(0.71, 0.71)
+shape = SubResource("CircleShape2D_u7ila")
+
+[node name="CharacterSprite" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+position = Vector2(-5.63381, -1.40845)
+rotation = -1.5708
+scale = Vector2(1.40845, 1.40845)
+texture = ExtResource("2_mifve")
+region_enabled = true
+region_rect = Rect2(65.9858, 6.05956, 29.922, 22.9351)
+
+[node name="SpecialMovementEnergyManager" parent="." instance=ExtResource("4_bluli")]
+
+[node name="AreaCircle" type="Area2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="Collision_Circle" type="CollisionShape2D" parent="AreaCircle"]
+shape = SubResource("CircleShape2D_bluli")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, 3)
+zoom = Vector2(2.125, 2.125)
+process_callback = 0
+position_smoothing_enabled = true
+
+[connection signal="notify_we_sliding" from="." to="." method="_on_notify_we_sliding"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="area_entered" from="AreaCircle" to="." method="_on_area_circle_area_entered"]
+[connection signal="area_exited" from="AreaCircle" to="." method="_on_area_circle_area_exited"]

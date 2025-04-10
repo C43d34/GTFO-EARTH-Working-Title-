@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceikoipn7u3ao"]
+
+[ext_resource type="Script" uid="uid://kk2as3j4xyg7" path="res://Miscellaneous (Unsorted Stuff)/collider_wall_slider.gd" id="1_p40pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p40pp"]
+
+[node name="ColliderWallSlider" type="Node2D"]
+
+[node name="WallSliderArea" type="Area2D" parent="."]
+script = ExtResource("1_p40pp")
+metadata/_custom_type_script = "uid://kk2as3j4xyg7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSliderArea"]
+shape = SubResource("RectangleShape2D_p40pp")
+debug_color = Color(0.989044, 0, 0.29505, 0.42)
+
+[node name="DirectionalRay" type="RayCast2D" parent="WallSliderArea"]
+enabled = false
+target_position = Vector2(0, 17.04)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkv43srj6tnpy"]
+
+[ext_resource type="Script" uid="uid://djw76e27qyni2" path="res://Entities/PlayerCharacter/Prototype1/EnergyCharging.gd" id="1_355xb"]
+
+[node name="MovementSpecial" type="Node2D"]
+script = ExtResource("1_355xb")

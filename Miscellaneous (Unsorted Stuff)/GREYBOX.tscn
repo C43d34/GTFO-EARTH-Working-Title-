@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://6exbfiyimvgt"]
+
+[ext_resource type="Texture2D" uid="uid://cppdakr2agt3j" path="res://Miscellaneous (Unsorted Stuff)/T_greybox.png" id="1_773uh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiis1"]
+
+[node name="GreyboxSquare" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_773uh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(3.52, 3.52)
+shape = SubResource("RectangleShape2D_qiis1")
