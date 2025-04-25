@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct7u8ple6f5kk"
-path="res://.godot/imported/carrot.png-3a4dd64529e32b3c2517cd407dd73fab.ctex"
+uid="uid://cppdakr2agt3j"
+path="res://.godot/imported/T_greybox.png-88d1359650b8899c29c4878bcce67f2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/PlayerCharacter/carrot.png"
-dest_files=["res://.godot/imported/carrot.png-3a4dd64529e32b3c2517cd407dd73fab.ctex"]
+source_file="res://Levels/Level Components/T_greybox.png"
+dest_files=["res://.godot/imported/T_greybox.png-88d1359650b8899c29c4878bcce67f2b.ctex"]
 
 [params]
 

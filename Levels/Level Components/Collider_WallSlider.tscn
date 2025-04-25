@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceikoipn7u3ao"]
 
-[ext_resource type="Script" uid="uid://kk2as3j4xyg7" path="res://Miscellaneous (Unsorted Stuff)/collider_wall_slider.gd" id="1_p40pp"]
+[ext_resource type="Script" uid="uid://kk2as3j4xyg7" path="res://Levels/Level Components/collider_wall_slider.gd" id="1_p40pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p40pp"]
 

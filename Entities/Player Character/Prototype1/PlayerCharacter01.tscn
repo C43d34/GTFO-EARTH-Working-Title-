@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ocgppf2yf1dk"]
 
-[ext_resource type="Script" uid="uid://peuxnie6b2j4" path="res://Entities/PlayerCharacter/Prototype1/player_character01.gd" id="1_bluli"]
+[ext_resource type="Script" uid="uid://peuxnie6b2j4" path="res://Entities/Player Character/Prototype1/player_character01.gd" id="1_bluli"]
 [ext_resource type="Texture2D" uid="uid://kf8c24oiph37" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_mifve"]
 [ext_resource type="Texture2D" uid="uid://dy81qcr78avl6" path="res://Miscellaneous (Unsorted Stuff)/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="3_kyd7j"]
-[ext_resource type="PackedScene" uid="uid://bkv43srj6tnpy" path="res://Entities/PlayerCharacter/Prototype1/movement_special.tscn" id="4_bluli"]
+[ext_resource type="PackedScene" uid="uid://bkv43srj6tnpy" path="res://Entities/Player Character/Prototype1/movement_special.tscn" id="4_bluli"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7ila"]
 

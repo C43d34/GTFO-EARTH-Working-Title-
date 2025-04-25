@@ -10,7 +10,8 @@ var UI_NODE : custom_control_node
 func _on_ready() -> void:
 ## Create & Instantiate Dynamic Nodes:
 	# Player character
-	PLAYER_CHARACTER_NODE = preload("res://Entities/PlayerCharacter/Prototype1/PlayerCharacter01.tscn").instantiate()
+	PLAYER_CHARACTER_NODE = preload("res://Entities/Player Character/Prototype1/PlayerCharacter01.tscn").instantiate()
+	
 	self.add_child(PLAYER_CHARACTER_NODE)
 	# Camera
 	#CAMERA_NODE = Camera2D.new() #added camera as part of player character scene because lazy right now (I dont know a clean way to setup component values dynamically. Probably want to just make a class for it anyway

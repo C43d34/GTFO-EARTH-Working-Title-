@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://8wrnd7q8kvmy"]
+
+[ext_resource type="Script" uid="uid://bfhl0t4nsbq53" path="res://Entities/Player Character/Movement Subsystem/SM_MoveState.gd" id="1_b58e4"]
+
+[node name="SmMoveStatePlayerCharacter" type="Node"]
+script = ExtResource("1_b58e4")
+metadata/_custom_type_script = "uid://bfhl0t4nsbq53"

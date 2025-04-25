@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cppdakr2agt3j"
-path="res://.godot/imported/T_greybox.png-6a4339e9565752e3cd7c475166592cc0.ctex"
+uid="uid://ct7u8ple6f5kk"
+path="res://.godot/imported/carrot.png-7e7ad885ed79fc4c2ffb0adf3cee4900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Miscellaneous (Unsorted Stuff)/T_greybox.png"
-dest_files=["res://.godot/imported/T_greybox.png-6a4339e9565752e3cd7c475166592cc0.ctex"]
+source_file="res://Entities/Player Character/carrot.png"
+dest_files=["res://.godot/imported/carrot.png-7e7ad885ed79fc4c2ffb0adf3cee4900.ctex"]
 
 [params]
 

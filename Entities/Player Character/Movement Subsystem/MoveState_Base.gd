@@ -1,0 +1,2 @@
+extends State_Base
+class_name MoveState_Base

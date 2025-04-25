@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqsbvnoy8nd8k"]
 
 [ext_resource type="Script" uid="uid://cafw16jkme3e5" path="res://Levels/Level0/l_0_game.gd" id="1_w522s"]
-[ext_resource type="PackedScene" uid="uid://6exbfiyimvgt" path="res://Miscellaneous (Unsorted Stuff)/GREYBOX.tscn" id="2_nw63s"]
-[ext_resource type="PackedScene" uid="uid://ceikoipn7u3ao" path="res://Miscellaneous (Unsorted Stuff)/Collider_WallSlider.tscn" id="3_07vxf"]
+[ext_resource type="PackedScene" uid="uid://6exbfiyimvgt" path="res://Levels/Level Components/GREYBOX.tscn" id="2_nw63s"]
+[ext_resource type="PackedScene" uid="uid://ceikoipn7u3ao" path="res://Levels/Level Components/Collider_WallSlider.tscn" id="3_07vxf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nw63s"]
 distance = -50.0
